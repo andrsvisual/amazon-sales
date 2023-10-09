@@ -61,8 +61,7 @@ def create_visualization(data, sidebar_visual_choices):
                     data=data, color=config.PALETTE['scatter_color'], 
                     label='Daily Sales', s=50, edgecolor="black", ax=ax)
     # plot average sales
-    #sns.lineplot(x='Date', y='Average', data=data, color=config.PALETTE['line_color'], 
-    #             linewidth=2.5, label='Rolling Average', ax=ax)
+    ax.plot(data['Date'], data['Average'], color=config.PALETTE['line_color'], linewidth=2.5, label='Rolling Average')
     # plot confidence intervals
     plot_confidence_intervals(ax, data, sidebar_visual_choices)
     # set titles and labels
